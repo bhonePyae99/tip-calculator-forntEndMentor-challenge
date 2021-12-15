@@ -1,13 +1,164 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  background-color: hsl(185, 41%, 84%);
+  font-family: "Space Mono", monospace;
+  font-size: 24px;
+}
+
+.container {
+  height: 100vh;
+}
+
+.logo {
+  width: 80px;
+  overflow-wrap: break-word;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  margin-top: 50px;
+  letter-spacing: 2px;
+}
+.calculator {
+  max-width: 800px;
+  height: 350px;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-around;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+}
+/* left */
+.left {
+  padding: 10px;
+  width: 50%;
+}
+
+.bill-input {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 40px;
+  padding: 5px 20px;
+  background-color: hsl(185, 41%, 84%);
+  border-radius: 5px;
+}
+
+.input {
+  width: 90%;
+  direction: rtl;
+  border: none;
+  outline: none;
+  background-color: inherit;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  caret-color: transparent;
+}
+
+.right {
+  padding: 10px;
+  width: 45%;
+  background-color: hsl(183, 100%, 15%);
+  border-radius: 12px;
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* tip selector */
+#tip-input {
+  border: none;
+  outline: none;
+  padding: 5px 5px;
+  caret-color: transparent;
+  cursor: pointer;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: 99px 99px 99px;
+  text-align: center;
+  padding: 0;
+}
+
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  margin: 10px 0 0 0;
+  padding: 0;
+}
+
+/* display container */
+.display-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+/* pseudo classes */
+.bill-input:focus-within {
+  border: 2px solid hsl(172, 67%, 45%);
+}
+
+#tip-input:focus-within {
+  border: 2px solid hsl(172, 67%, 45%);
+}
+
+.btn:active {
+  background-color: red;
+}
+
+/* ulties classes */
+.invalid {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 40px;
+  padding: 5px 20px;
+  background-color: hsl(185, 41%, 84%);
+  border-radius: 5px;
+  border: 2px solid red;
+}
+
+.invalidFeedback {
+  font-size: 0.7rem;
+  color: red;
+}
+
+@media (max-width: 800px) {
+  .display-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .calculator {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: inherit;
+    margin-top: 150px;
+    align-items: center;
+    border-radius: 40px;
+  }
+  .left,
+  .right {
+    width: 100%;
+  }
 }
